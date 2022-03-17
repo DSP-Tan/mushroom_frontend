@@ -1,0 +1,18 @@
+FROM python:3.7
+
+# Expose port you want your app on
+EXPOSE 5000
+
+# Upgrade pip and install requirements
+COPY requirements.txt requirements.txt
+RUN pip install -U pip
+RUN pip install -r requirements.txt
+
+# Copy app code and set working directory
+COPY test.py test.py
+COPY utils.py utils.py
+COPY Wiki_images
+WORKDIR .
+
+# Run
+ENTRYPOINT["streamlit","run","test.py","-server.port=5000","-server.address=0.0.0.0"]
