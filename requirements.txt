@@ -1,0 +1,22 @@
+# packaging
+pip>=9
+setuptools>=26
+twine
+wheel>=0.29
+
+
+# API
+python-multipart
+
+# utilities
+six>=1.14
+
+# Frontend
+streamlit
+watchdog
+requests
+json-encoder
+wikipedia
+# os
+# io
+pillow
