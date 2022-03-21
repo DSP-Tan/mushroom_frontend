@@ -79,7 +79,7 @@ if(image):
                 im.thumbnail(size)
                 st.image(im)
 
-            # Run prediction.
+            # Call API using requests to run prediction.
             url="https://mushroom-docker-lpuaioudtq-ew.a.run.app/species"
             ultimate_mush= query_species(payload,url)
             preidction = convert_name(ultimate_mush[0])
