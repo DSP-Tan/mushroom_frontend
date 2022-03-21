@@ -32,13 +32,14 @@ spinner_quotes = ['“All Fungi are edible. Some fungi are only edible once.” 
                   'Look around when you have got your first mushroom or made your first discovery: they grow in clusters. — George Polya',
                   'From dead plant matter to nematodes to bacteria, never underestimate the cleverness of mushrooms to find new food! — Paul Stamets',
                   'Compliments are like mushrooms, the most beautiful are the most poisonous. - Italian proverb',
-                  "One who is noisy in the wood, scares away mushrooms. - Russian proverb"
+                  "One who is noisy in the wood, scares away mushrooms. - Russian proverb",
+                  "Every mushroom knows its time. - Russian proverb",
+                  "Without stooping down for the mushroom, you cannot put it in your basket. - Russian proverb",
+                  "Watch out for the unexpected mushroom. - Sicilian proverb"
                   ]
 
 # Lot's of nice proverbs here: https://quoteproverbs.com/mushrooms/
 
-
-#st.image(get_wiki_image('Russula nobilis')) # returning the Wikipedia image
 label = 'Upload your Mushroom here. (refresh/retry if error)'
 
 image = st.file_uploader(label, type=None, accept_multiple_files=False, key=None, help=None, on_change=None)
@@ -66,8 +67,7 @@ if(image):
     size= 256,256
     cols = st.columns(3)
     if cols[1].button('Identify your Mushroom'):
-
-
+        
         random_num = random.randint(0,len(spinner_quotes)-1)
         with st.spinner(spinner_quotes[random_num]):
             predict_cols = st.columns(3)
@@ -131,9 +131,9 @@ if(image):
             except:
                 pass
                 st.markdown('#')
-                st.markdown("<p style='text-align: justify; color: black; font-size:8px;'>Disclaimer: \n Don\'t consume any mushroom unless you are 100% certain that it is edible. \
-                         The Mushroom magic app cannot provide this certainty. \n\
-                         The Mushroom magic app is published as a student project, \
-                         but WITHOUT ANY WARRANTY; without even the implied warranty of \
-                         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. \
-                         </p>", unsafe_allow_html=True)
+            st.markdown("<p style='text-align: justify; color: black; font-size:8px;'>Disclaimer: \n Don\'t consume any mushroom unless you are 100% certain that it is edible. \
+                     The Mushroom magic app cannot provide this certainty. \n\
+                     The Mushroom magic app is published as a student project, \
+                     but WITHOUT ANY WARRANTY; without even the implied warranty of \
+                     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. \
+                     </p>", unsafe_allow_html=True)

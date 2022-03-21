@@ -74,7 +74,7 @@ def convert_name(name):
 
 
 
-#To do: move this to utils.
+# To Do: Do not exclude other.
 def get_max_mush(dict_res,other=True, weights=[1,1,1]):
     '''
     This will return the dicionary item of the species
@@ -122,4 +122,5 @@ def query_species(payload,base_url):
     ultimate_mush=get_max_mush(maxes_dict,other=False)
     print(f"The final chosen mushroom is:\n{ultimate_mush}")
     return ultimate_mush
+
 
