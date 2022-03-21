@@ -39,7 +39,7 @@ spinner_quotes = ['“All Fungi are edible. Some fungi are only edible once.” 
 
 
 #st.image(get_wiki_image('Russula nobilis')) # returning the Wikipedia image
-label = 'Upload your Mushroom here'
+label = 'Upload your Mushroom here. (refresh/retry if error)'
 
 image = st.file_uploader(label, type=None, accept_multiple_files=False, key=None, help=None, on_change=None)
 
@@ -131,9 +131,8 @@ if(image):
             except:
                 pass
                 st.markdown('#')
-                st.markdown("<p style='text-align: justify; color: black;'>Disclaimer: \n Don\'t consume any mushroom unless you are 100% sure that it is edible. \
-                         The Mushroom magic app can\'t provide you this certainty. \
-                         Only a certified professional can. \n \
+                st.markdown("<p style='text-align: justify; color: black; font-size:8px;'>Disclaimer: \n Don\'t consume any mushroom unless you are 100% certain that it is edible. \
+                         The Mushroom magic app cannot provide this certainty. \n\
                          The Mushroom magic app is published as a student project, \
                          but WITHOUT ANY WARRANTY; without even the implied warranty of \
                          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. \
